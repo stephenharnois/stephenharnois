@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>
+            http://stephenharnois.github.io/stephenharnois/blog/2013/06/02/and-so-it-begins-dot/
+        </loc>
+        <lastmod>2013-06-02T13:54:39-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://stephenharnois.github.io/stephenharnois/blog/archives/</loc>
+        <lastmod>2013-06-02T13:54:39-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://stephenharnois.github.io/stephenharnois/blog/</loc>
+        <lastmod>2013-06-02T13:54:39-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://stephenharnois.github.io/stephenharnois/</loc>
+        <lastmod>2013-06-02T13:54:39-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://stephenharnois.github.io/stephenharnois/robots.txt</loc>
+        <lastmod>2013-06-02T10:28:20-04:00</lastmod>
+    </url>
+</urlset>

@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://stephenharnois.github.io/stephenharnois/sitemap.xml 
