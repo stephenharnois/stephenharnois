@@ -1,0 +1,13 @@
+// This File is imported last, and will override other styles in the cascade
+// Add styles here to make changes without digging in too much
+hgroup img{
+  float: right;
+  height: 50px;
+  background-color: lightgray;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+hgroup h1{
+  color: lightgray;
+}
