@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Training | Stephen Harnois]]></title>
   <link href="http://stephenharnois.github.io/stephenharnois/blog/categories/training/atom.xml" rel="self"/>
   <link href="http://stephenharnois.github.io/stephenharnois/"/>
-  <updated>2013-06-02T14:29:23-04:00</updated>
+  <updated>2013-06-02T16:09:05-04:00</updated>
   <id>http://stephenharnois.github.io/stephenharnois/</id>
   <author>
     <name><![CDATA[Stephen Harnois]]></name>
@@ -18,8 +18,8 @@
     <link href="http://stephenharnois.github.io/stephenharnois/blog/2013/06/02/and-so-it-begins-dot/"/>
     <updated>2013-06-02T11:33:00-04:00</updated>
     <id>http://stephenharnois.github.io/stephenharnois/blog/2013/06/02/and-so-it-begins-dot</id>
-    <content type="html"><![CDATA[<p>Welcome, this blog is going to be a log of the training course I have taken.
-I am mainly doing this for myself so I can have a record of all the trainings I have taken.
+    <content type="html"><![CDATA[<p>Welcome, this blog is going to be a record of the training course I have taken.
+I am mainly doing this for myself so I can have a list of all the trainings I have taken.
 If you are new to web development I hope these posts help point you toward additional training options out there.</p>
 
 <!-- more -->
@@ -28,12 +28,27 @@ If you are new to web development I hope these posts help point you toward addit
 <h2>Octopress</h2>
 
 <p>The first thing I had to do was to get my own site updated and start this blog.
-I chose to use Octopress because it incorporates well into my workflow.
+I chose to use Octopress because it incorporates well into my work flow.
 I like developing using Ruby on Rails with Git as my version control solution.
 This works well with Octopress because it is built with rails and uses Git for its own version control.
-I used several tutorials to get upto speed, the first was <a href="http://hub.tutsplus.com/tutorials/getting-started-with-octopress--webdesign-11442">Getting Started With Octopress</a>
+I used several tutorials to get up to speed, the first was <a href="http://hub.tutsplus.com/tutorials/getting-started-with-octopress--webdesign-11442">Getting Started With Octopress</a>
 by Jonathan Cutrell on Tuts+.
 The second source was the <a href="http://octopress.org/docs">Octopress Documentation</a> itself which where very helpful.</p>
+
+<p>The only problem I had was trying to get the sidebar to not show up on the index page.
+The solution I used was to pass the page the sidebar parameter in YAML section of the page.</p>
+
+<pre><code>---
+layout: page
+title: "index"
+comments: false
+sharing: true
+footer: true
+sidebar: false
+---
+</code></pre>
+
+<p>That is all for today, be back tommorow with another update.</p>
 ]]></content>
   </entry>
   
