@@ -3,11 +3,13 @@
 hgroup img{
   float: right;
   height: 50px;
-  background-color: lightgray;
+  background-color: $base3;
   padding: 10px;
   border-radius: 10px;
 }
 
-hgroup h1{
-  color: lightgray;
+.headshot {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }

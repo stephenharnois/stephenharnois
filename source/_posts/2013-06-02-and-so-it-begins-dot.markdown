@@ -6,8 +6,8 @@ comments: false
 categories: [Training, Turorial] 
 ---
 
-Welcome, this blog is going to be a log of the training course I have taken.
-I am mainly doing this for myself so I can have a record of all the trainings I have taken.
+Welcome, this blog is going to be a record of the training course I have taken.
+I am mainly doing this for myself so I can have a list of all the trainings I have taken.
 If you are new to web development I hope these posts help point you toward additional training options out there.
 
 <!-- more -->
@@ -15,10 +15,22 @@ If you are new to web development I hope these posts help point you toward addit
 ##Octopress
 
 The first thing I had to do was to get my own site updated and start this blog.
-I chose to use Octopress because it incorporates well into my workflow.
+I chose to use Octopress because it incorporates well into my work flow.
 I like developing using Ruby on Rails with Git as my version control solution.
 This works well with Octopress because it is built with rails and uses Git for its own version control.
-I used several tutorials to get upto speed, the first was [Getting Started With Octopress](http://hub.tutsplus.com/tutorials/getting-started-with-octopress--webdesign-11442)
+I used several tutorials to get up to speed, the first was [Getting Started With Octopress](http://hub.tutsplus.com/tutorials/getting-started-with-octopress--webdesign-11442)
 by Jonathan Cutrell on Tuts+.
 The second source was the [Octopress Documentation](http://octopress.org/docs) itself which where very helpful.
+
+The only problem I had was trying to get the sidebar to not show up on the index page.
+The solution I used was to pass the page the sidebar parameter in YAML section of the page. 
+    ---
+    layout: page
+    title: "index"
+    comments: false
+    sharing: true
+    footer: true
+    sidebar: false
+    ---
+That is all for today, be back tommorow with another update.
 
