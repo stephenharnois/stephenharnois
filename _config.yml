@@ -4,7 +4,7 @@
 
 url: http://stephenharnois.github.io/stephenharnois
 title: Stephen Harnois
-subtitle: 
+subtitle: Web Developer 
 author: Stephen Harnois
 simple_search: http://google.com/search
 description:
@@ -16,7 +16,7 @@ description:
 date_format: "ordinal"
 
 # RSS / Email (optional) subscription links (change if using something like Feedburner)
-subscribe_rss: 
+subscribe_rss: /atom.xml 
 subscribe_email: stephen.harnois@live.com
 # RSS feeds can list your email address if you like
 email:

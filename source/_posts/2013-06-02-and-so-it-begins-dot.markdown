@@ -3,7 +3,7 @@ layout: post
 title: "And so it begins.."
 date: 2013-06-02 11:33
 comments: false
-categories: [Training, Turorial] 
+categories: [Training, Tutorial] 
 ---
 
 Welcome, this blog is going to be a record of the training course I have taken.
