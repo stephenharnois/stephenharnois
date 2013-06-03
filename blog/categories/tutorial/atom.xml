@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Training | Stephen Harnois]]></title>
-  <link href="http://stephenharnois.github.io/stephenharnois/blog/categories/training/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Tutorial | Stephen Harnois]]></title>
+  <link href="http://stephenharnois.github.io/stephenharnois/blog/categories/tutorial/atom.xml" rel="self"/>
   <link href="http://stephenharnois.github.io/stephenharnois/"/>
   <updated>2013-06-03T13:04:30-04:00</updated>
   <id>http://stephenharnois.github.io/stephenharnois/</id>

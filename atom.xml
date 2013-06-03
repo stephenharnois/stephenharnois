@@ -4,7 +4,7 @@
   <title><![CDATA[Stephen Harnois]]></title>
   <link href="http://stephenharnois.github.io/stephenharnois/atom.xml" rel="self"/>
   <link href="http://stephenharnois.github.io/stephenharnois/"/>
-  <updated>2013-06-02T16:09:05-04:00</updated>
+  <updated>2013-06-03T13:04:30-04:00</updated>
   <id>http://stephenharnois.github.io/stephenharnois/</id>
   <author>
     <name><![CDATA[Stephen Harnois]]></name>
@@ -12,6 +12,41 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby on Rails Tutorial: Chapters 1 and 2]]></title>
+    <link href="http://stephenharnois.github.io/stephenharnois/blog/2013/06/03/rails-tutorial-chapters-1-and-2/"/>
+    <updated>2013-06-03T12:30:00-04:00</updated>
+    <id>http://stephenharnois.github.io/stephenharnois/blog/2013/06/03/rails-tutorial-chapters-1-and-2</id>
+    <content type="html"><![CDATA[<p>A week ago I started the <a href="http://ruby.railstutorial.org/ruby-on-rails-tutorial-book">Ruby on Rails Tutorial Book</a>.
+I found the information in the first two chapters very helpful to get a general idea  of Ruby on Rails.
+Before I get to that I should start by describing my exposure to Ruby before this tutorial.</p>
+
+<!-- more -->
+
+
+<h2>Ruby</h2>
+
+<p>I started learning Ruby using the <a href="http://www.codecademy.com/tracks/ruby">Codecademy&rsquo;s</a> Ruby track.
+The ten chapters covered everything from a basic introduction through more advanced Object-Oriented Programming concepts.
+Some of the Challenges where challenging but working through them helped me to better understand Ruby.</p>
+
+<h2>Rails</h2>
+
+<p>Once I had a grasp of the Ruby language I moved on to the <a href="http://www.codeschool.com/courses/rails-for-zombies-redux">Rails for Zombies Course</a> at the Code School.
+That course gave a general overview of the components that are part of a Rails project.</p>
+
+<h2>Ruby on Rails Tutorial Book</h2>
+
+<p>After understanding the basics of a Rails app.
+I decided to move on to the Ruby on Rails Tutorial Book.
+I found the first couple of chapters a great refresher of the previous courses I had taken.
+With the addition of showing how to put the project under version control using Git and showing you how to push a demo app to Heroku.
+These chapters where very beneficial in helping me cement the Ruby on Rails app building process.</p>
+
+<p>That is all for today I will cover Chapter 3 tomorrow.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[And so it begins..]]></title>
