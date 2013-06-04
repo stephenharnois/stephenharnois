@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Training | Stephen Harnois]]></title>
   <link href="http://stephenharnois.github.io/stephenharnois/blog/categories/training/atom.xml" rel="self"/>
   <link href="http://stephenharnois.github.io/stephenharnois/"/>
-  <updated>2013-06-03T14:23:31-04:00</updated>
+  <updated>2013-06-04T15:49:33-04:00</updated>
   <id>http://stephenharnois.github.io/stephenharnois/</id>
   <author>
     <name><![CDATA[Stephen Harnois]]></name>
@@ -12,6 +12,36 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby on Rails Tutorial: Chapter 3 and 4]]></title>
+    <link href="http://stephenharnois.github.io/stephenharnois/blog/2013/06/04/ruby-on-rails-tutorial-chapter-3-and-4/"/>
+    <updated>2013-06-04T15:29:00-04:00</updated>
+    <id>http://stephenharnois.github.io/stephenharnois/blog/2013/06/04/ruby-on-rails-tutorial-chapter-3-and-4</id>
+    <content type="html"><![CDATA[<p>Chapters 3 and 4 were about the creation of static pages and ruby data structures used in rails.
+This section was a good introduction to static pages in rails and a good refresher of ruby.</p>
+
+<!-- more -->
+
+
+<h2>Static Pages and Test-Driven Development</h2>
+
+<p>The new idea that I learned from this chapter was to right test first and then code the solution.
+This chapter sets up RSpec and introduces the Red, Green, Re-factor procedure.
+Red is when you first write a failing test. Green is once you implement a solution.
+Re-factoring is going back over the solution and seeing if there is a better solution to the problem.
+The good thing is since there is a automated test setup you can see if your change breaks anything else.
+At the end of this chapter the advanced setup added Guard and Spork to RSpec which is used to automatically rerun your tests when your files change.</p>
+
+<h2>Rails Flavored Ruby</h2>
+
+<p>This chapter was more of a refresher since I had all of the previous training in Ruby.
+There was also some information about how Rails includes CSS in the projects.
+The exercises at the end of the chapter also suggests looking at the <a href="http://rubykoans.com/">Ruby Koans</a>, which I will move on to once I am done with this tutorial.</p>
+
+<p>Thats it for today, the chapters get harder from here on so I will cover chapter 5 tomorrow.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ruby on Rails Tutorial: Chapters 1 and 2]]></title>
