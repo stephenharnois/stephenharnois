@@ -4,7 +4,7 @@
   <title><![CDATA[Stephen Harnois]]></title>
   <link href="http://stephenharnois.github.io/stephenharnois/atom.xml" rel="self"/>
   <link href="http://stephenharnois.github.io/stephenharnois/"/>
-  <updated>2013-06-04T15:49:33-04:00</updated>
+  <updated>2013-06-05T16:43:58-04:00</updated>
   <id>http://stephenharnois.github.io/stephenharnois/</id>
   <author>
     <name><![CDATA[Stephen Harnois]]></name>
@@ -12,6 +12,47 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby on Rails Tutorial: Chapter 5]]></title>
+    <link href="http://stephenharnois.github.io/stephenharnois/blog/2013/06/05/ruby-on-rails-tutorial-chapter-5/"/>
+    <updated>2013-06-05T16:14:00-04:00</updated>
+    <id>http://stephenharnois.github.io/stephenharnois/blog/2013/06/05/ruby-on-rails-tutorial-chapter-5</id>
+    <content type="html"><![CDATA[<p>Chapter 5 was about filling in the layout of the static pages created in Chapter 3.
+There were a lot of new ideas introduced in this chapter including CSS, Routes and controllers.</p>
+
+<!-- more -->
+
+
+<h2>Adding Some Structure</h2>
+
+<p>The main structure of the app is added using a CSS framework called <a href="http://twitter.github.io/bootstrap/">Bootstrap</a>.
+This is my first time using it and I love the power it has to handle the structure by simply including a few classes in the HTML.</p>
+
+<h2>The Asset Pipeline</h2>
+
+<p>The new version of rails uses an asset pipeline which streamlines the use of javascript, style sheets and images.
+The coolest thing I learned was that with <a href="http://sass-lang.com/">Sass</a> you can nest related CSS styles.
+Which makes the style sheets easier to read and more compact.</p>
+
+<h2>RESTful Routes</h2>
+
+<p>The final lesson of this chapter was the idea of RESTful routes.
+An example is if you wanted to go to the about page of the example site it would look like this:</p>
+
+<pre><code>www.example.com/about
+</code></pre>
+
+<p>In this process rails also assigns a name to the route:</p>
+
+<pre><code>about_path
+</code></pre>
+
+<p>This makes the sites URLs clean and efficient.</p>
+
+<p>That is all for today, tomorrow it is on to Chapter 6.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ruby on Rails Tutorial: Chapter 3 and 4]]></title>
