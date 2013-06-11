@@ -4,7 +4,7 @@
   <title><![CDATA[Stephen Harnois]]></title>
   <link href="http://stephenharnois.github.io/stephenharnois/atom.xml" rel="self"/>
   <link href="http://stephenharnois.github.io/stephenharnois/"/>
-  <updated>2013-06-05T16:43:58-04:00</updated>
+  <updated>2013-06-11T10:35:54-04:00</updated>
   <id>http://stephenharnois.github.io/stephenharnois/</id>
   <author>
     <name><![CDATA[Stephen Harnois]]></name>
@@ -12,6 +12,262 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby on Rails Tutorial: Chapter 10]]></title>
+    <link href="http://stephenharnois.github.io/stephenharnois/blog/2013/06/10/ruby-on-rails-tutorial-chapter-10/"/>
+    <updated>2013-06-10T15:57:00-04:00</updated>
+    <id>http://stephenharnois.github.io/stephenharnois/blog/2013/06/10/ruby-on-rails-tutorial-chapter-10</id>
+    <content type="html"><![CDATA[<p>This chapter was all about allowing the users ato enter their micro posts and to manipulate them.
+The section are setting up the micropost model, displaying the microposts and then allowing the microposts to be manipulated by the user.</p>
+
+<!-- more -->
+
+
+<h2>Micropost Model</h2>
+
+<p>The microposts model is simple it only contains the actual post from the user and the user id of the user.
+The main idea for this section is to setup a relationship between the user and his posts.
+Since one use can have many posts and a post can only belong to a single user.
+Rails allows you to set this relationship up very easily.</p>
+
+<pre><code>:Micropost Model
+belongs_to :user
+
+:User Model
+has_many :microposts
+</code></pre>
+
+<p>Those few lines is all it takes for Rails to establish the relationship.
+The last piece of setup for the micropost model is how to handle getting rid of users posts when the user is deleted from the system.
+Rails has the following solution:</p>
+
+<pre><code>:User Model
+has_many :microposts, dependent: :destroy
+</code></pre>
+
+<p>The dependent destroy option on the has many relationship will remove all associated posts when the user is deleted from the system.</p>
+
+<h2>Displaying Microposts</h2>
+
+<p>The microposts will be displayed on the users profile page, so a section is added there to display the microposts.
+To handle the pagination we will use the will_paginate ruby from the previous chapter with one small addition.</p>
+
+<pre><code>&lt;%= will_paginate @microposts %&gt;
+</code></pre>
+
+<p>Since we are on the user view coming from the user controller we have to tell will_paginate that we want the micropost data to be paginated.
+The last step to displaying microposts is a little bit of CSS styling and they are done.</p>
+
+<h2>Manipulating Microposts</h2>
+
+<p>Now we have to add the CRUD elements to microposts just like they were for users.
+Since now we now when a user is logged in we can check that on the home page and display a micropost form for users and a signup form for those who have not signed in yet.
+Since the user and micropost have the relationship defined above we can do something clever and define the new micropost based on the current user, like so:</p>
+
+<pre><code>@micropost = current_user.microposts.build if signed_in?
+</code></pre>
+
+<p>This one line will create a new micropost form for the user if they are signed in.
+To destroy a micropost you just have to call the destroy method on the micropost.</p>
+
+<p>Thats it for chapter 10 next is the final chapter 11 where users can follow other users.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby on Rails Tutorial: Chapter 9]]></title>
+    <link href="http://stephenharnois.github.io/stephenharnois/blog/2013/06/09/ruby-on-rails-tutorial-chapter-9/"/>
+    <updated>2013-06-09T15:27:00-04:00</updated>
+    <id>http://stephenharnois.github.io/stephenharnois/blog/2013/06/09/ruby-on-rails-tutorial-chapter-9</id>
+    <content type="html"><![CDATA[<p>This Chapter is all about manipulating users and what they are allowed to do on the system.
+The topics covered in this Chapter were updating users, authorization, showing all users on the system and deleting users.</p>
+
+<!-- more -->
+
+
+<h2>Updating Users</h2>
+
+<p>Editing users is very similar to creating new users, we just have to call the update cation instead of the new action.
+We can use the find method to get the user id from the params structure and search the database for that user.
+If there is a problem with the edit send the use back and display error.
+On a successful edit just go to the users profile page.
+This section was very similar to the work from the previous chapter.</p>
+
+<h2>Authorization</h2>
+
+<p>The first step is to check if the user is signed in on every page and if not redirect them to the signin page.
+We will also display a notice to the user to sign in.
+I like how Rails uses the before filters in the controller to verify the correct user is signed in.</p>
+
+<pre><code>before_filter :signed_in_user, only: [:edit, :update]
+before_filter :correct_user,   only: [:edit, :update]
+</code></pre>
+
+<p>The next interesting piece was a way to remember what page the user was looking for and forward them to that page once signed in.</p>
+
+<h2>Showing All Users</h2>
+
+<p>The next step is to create a page to list all of the users, but we only want to show the users if a current user is signed in first.
+We then grab all of the users from the database and display them on the page.
+However this can cause a problem when the site grows ad has thousands of users.
+The solution is to use pagination, which is to only grab a page worth of users from the database.
+Then if you want to see more users you can request the next page of users.
+The tutorial uses <a href="https://github.com/mislav/will_paginate/wiki">will_paginate</a> gem to handle pagination.
+Since the user view will be getting its data from the users controller you can add pagination simply by adding the following:</p>
+
+<pre><code>:In the View
+&lt;%= will_paginate %&gt;
+
+:In the controller
+@users = User.paginate(page: params[:page])
+</code></pre>
+
+<h2>Deleting Users</h2>
+
+<p>The final piece of the puzzle is to allow admin users to remove users from the system.
+We have to add a field to the users database that defines an administrative user.
+Then we go to the list of all users and add a field to delete all users that are not the current user.
+The actual removal is simple, just by calling the destroy method on the user and then return an acknowledgement to the user.</p>
+
+<p>Thats it for Chapter 9 up next is Chapter 10.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby on Rails Tutorial: Chapter 8]]></title>
+    <link href="http://stephenharnois.github.io/stephenharnois/blog/2013/06/08/ruby-on-rails-tutorial-chapter-8/"/>
+    <updated>2013-06-08T15:48:00-04:00</updated>
+    <id>http://stephenharnois.github.io/stephenharnois/blog/2013/06/08/ruby-on-rails-tutorial-chapter-8</id>
+    <content type="html"><![CDATA[<p>Chapter 8 is about Signing the user in and out.
+The three sections in this chapter was setting up sessions, handling signin failure and handling signin success.</p>
+
+<!-- more -->
+
+
+<h2>Sessions</h2>
+
+<p>Sessions are a semi-permanent connection between server and client.
+Ruby uses cookies to store the session data.
+When a user signs in a new session has to be created.
+When a user signs out the existing session has to be created.
+Ruby does this using routes to point to the correct function.</p>
+
+<h2>Signin Failure</h2>
+
+<p>First a new signin page has to be created to setup the new session.
+Once the user signs in their password is compared to the hash stored in the database.
+I like the way that Ruby authenticates users.</p>
+
+<pre><code>user &amp;&amp; user.authenticate(params[:session][:password])
+</code></pre>
+
+<p>This solution is very elegant because if the user does not exist then user will be nil and it will stop comparing there.
+If the user exists and the password is wrong then signin will fail.
+The only way for the user login to succeed is if both user name and password match what is in the database.
+The flash that we setup last chapter is used here again to alert of a failed signin attempt.
+Once signin fails the user is redirected to signin again.</p>
+
+<h2>Signin Success</h2>
+
+<p>Once the user signs in correctly we send them to the profile page.
+To remember if a user has signed in we generate a random token and store that in there session.
+I like the way Rails handles expiring cookies, normally cookies expire at some time.
+If you want them to last a long time you would do the following:</p>
+
+<pre><code>cookies.20.years.from_now
+cookies.premanent
+</code></pre>
+
+<p>These two statements will have the same effect, since Rails has added a special permanent method.
+The current user is also stored in the session so that authorization can be handled.
+The last thing to handle is destroying the session once the user logs out, which is done with the delete method of the cookie.</p>
+
+<p>Thats it for this Chapter next is Chapter 9.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby on Rails Tutorial: Chapter 7]]></title>
+    <link href="http://stephenharnois.github.io/stephenharnois/blog/2013/06/07/ruby-on-rails-tutorial-chapter-7/"/>
+    <updated>2013-06-07T15:37:00-04:00</updated>
+    <id>http://stephenharnois.github.io/stephenharnois/blog/2013/06/07/ruby-on-rails-tutorial-chapter-7</id>
+    <content type="html"><![CDATA[<p>Chapter 7 was about allowing users to signup for access to the application.
+The three steps to get the signup function working is creating the form, handle signup failure and handling signup success.</p>
+
+<!-- more -->
+
+
+<h2>Signup Form</h2>
+
+<p>The form_for structure is used to create the form fields for user signup.
+Every field is given a label and a field type.
+There is also a submit function which creates the submit button used to send the filled data to the system to be evaluated.
+The form_for takes an instance variable relating to the controller that it sends its data to.
+Because the tutorial is using the bootstrap framework it is very easy to style the submit button.
+You just have to add a few classes to the button and it is styled nicely.</p>
+
+<h2>Signup Failure</h2>
+
+<p>When the signup fails the controller re-routes you back to the signup page and displays an error.
+To display the errors an array attached to the user instance variable.
+To display the errors we loop through the errors and print each on in an ordered list.</p>
+
+<h2>Signup Success</h2>
+
+<p>Once the user signs in successfully you want to point him to the main profile page.
+The new feature in this section is the use of the flash variable.
+The flash variable is used to display a message on different pages than the one you logged in on.
+Since the flash is a hash we can use the key as a css class for styling and use the value as the message to the user.</p>
+
+<p>That is it for this chapter up next is Chapter 8.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby on Rails Tutorial: Chapter 6]]></title>
+    <link href="http://stephenharnois.github.io/stephenharnois/blog/2013/06/06/ruby-on-rails-tutorial-chapter-6/"/>
+    <updated>2013-06-06T15:23:00-04:00</updated>
+    <id>http://stephenharnois.github.io/stephenharnois/blog/2013/06/06/ruby-on-rails-tutorial-chapter-6</id>
+    <content type="html"><![CDATA[<p>In Chapter 6 the topic was about how to represent a user in the system.
+First was the user model then being sure you can validate that user and finally securing the users password.</p>
+
+<!-- more -->
+
+
+<h2>User Model</h2>
+
+<p>This section is about setting up user CRUD.
+Which is how we interact with the database.
+CRUD stands for create, read, update and destroy.
+All of these functions are necessary for most structures that have a database backend.</p>
+
+<h2>Validation</h2>
+
+<p>If you want to validate parts of the users information that is stored in the database.
+Something similar to the following needs to be added in to the User model:</p>
+
+<pre><code>validates :name,  presence: true, length: { maximum: 50 }
+VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: true
+</code></pre>
+
+<p>The name and email symbols above can be replaced by any field that you need to verify information of.
+The length field will verify the length, the format field makes sure the format matches, the presence verifies the field is filled in and the uniqueness verifies there is only one like that in the database.</p>
+
+<h2>Password Security</h2>
+
+<p>Rails secures passwords very easily, you just have to add the following to the user model:</p>
+
+<pre><code>has_secure_password
+</code></pre>
+
+<p>By using the code above the users password is turned into a cryptographic hash and that hash is stored in the database.
+So even if someone gets a hold of the database all of the users passwords are still safe.</p>
+
+<p>That is all for today tomorrow Chapter 7.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ruby on Rails Tutorial: Chapter 5]]></title>
