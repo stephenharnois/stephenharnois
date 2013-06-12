@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Training | Stephen Harnois]]></title>
   <link href="http://stephenharnois.github.io/stephenharnois/blog/categories/training/atom.xml" rel="self"/>
   <link href="http://stephenharnois.github.io/stephenharnois/"/>
-  <updated>2013-06-11T10:35:54-04:00</updated>
+  <updated>2013-06-12T18:58:10-04:00</updated>
   <id>http://stephenharnois.github.io/stephenharnois/</id>
   <author>
     <name><![CDATA[Stephen Harnois]]></name>
@@ -12,6 +12,56 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby on Rails Tutorial: Chapter 11]]></title>
+    <link href="http://stephenharnois.github.io/stephenharnois/blog/2013/06/12/ruby-on-rails-tutorial-chapter-11/"/>
+    <updated>2013-06-12T15:13:00-04:00</updated>
+    <id>http://stephenharnois.github.io/stephenharnois/blog/2013/06/12/ruby-on-rails-tutorial-chapter-11</id>
+    <content type="html"><![CDATA[<p>The final chapter of the tutorial is all about adding the ability to follow users.
+The sections of the chapter are setting up the relationship model, creating a web interface for following users and setting up the status feed.</p>
+
+<!-- more -->
+
+
+<h2>Relationship Model</h2>
+
+<p>To setup the relationship between followers and the people they follow Rails has an interesting solution:</p>
+
+<pre><code>has_many :followed_users, through: :relationships, source: :followed
+</code></pre>
+
+<p>This code sets up a relationship between users through the relationship table.
+The user model then needs functions to determine if you are following a user and a function to setup a following relationship.
+There also needs to be a way to destroy the relationship between users.
+Since this relationship has been setup the reverse relationship can be collected from the table very easily.</p>
+
+<h2>Web Interface</h2>
+
+<p>On the user profile there will be a number representing the people you are following and the people who follow you.
+The first step is to add the following and followers routes to the routes file.
+Then get the user and check the relationship table to find the followed and followers counts.
+Next a button is added to each users feed to let you know if you are following that user.
+If you are following them the button will say unfollow and if not following them then the button says follow.
+The final piece is to add the gravatar images for each of the people you are following below the number of followers.</p>
+
+<h2>Status Feed</h2>
+
+<p>The status feed needs to contain the list of all of your posts combined with the post of the people you are following.
+The following is a blend of Rails, Ruby and SQL that will get the list of microposts to include in the status feed:</p>
+
+<pre><code>followed_user_ids = "SELECT followed_id FROM relationships
+                     WHERE follower_id = :user_id"
+where("user_id IN (#{followed_user_ids}) OR user_id = :user_id", user_id: user.id)
+</code></pre>
+
+<p>That finishes up the status feed section of the app.
+This tutorial had time when it was difficult, but if you stick with it and read over the sections a few times I found that it clicked.</p>
+
+<p>That is it for this tutorial next I will be moving on to the <a href="http://rubykoans.com/">Ruby Koans</a> tutorial.
+Ruby Koans uses ruby itself to teach the language.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ruby on Rails Tutorial: Chapter 10]]></title>
@@ -221,51 +271,6 @@ The flash variable is used to display a message on different pages than the one 
 Since the flash is a hash we can use the key as a css class for styling and use the value as the message to the user.</p>
 
 <p>That is it for this chapter up next is Chapter 8.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Ruby on Rails Tutorial: Chapter 6]]></title>
-    <link href="http://stephenharnois.github.io/stephenharnois/blog/2013/06/06/ruby-on-rails-tutorial-chapter-6/"/>
-    <updated>2013-06-06T15:23:00-04:00</updated>
-    <id>http://stephenharnois.github.io/stephenharnois/blog/2013/06/06/ruby-on-rails-tutorial-chapter-6</id>
-    <content type="html"><![CDATA[<p>In Chapter 6 the topic was about how to represent a user in the system.
-First was the user model then being sure you can validate that user and finally securing the users password.</p>
-
-<!-- more -->
-
-
-<h2>User Model</h2>
-
-<p>This section is about setting up user CRUD.
-Which is how we interact with the database.
-CRUD stands for create, read, update and destroy.
-All of these functions are necessary for most structures that have a database backend.</p>
-
-<h2>Validation</h2>
-
-<p>If you want to validate parts of the users information that is stored in the database.
-Something similar to the following needs to be added in to the User model:</p>
-
-<pre><code>validates :name,  presence: true, length: { maximum: 50 }
-VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: true
-</code></pre>
-
-<p>The name and email symbols above can be replaced by any field that you need to verify information of.
-The length field will verify the length, the format field makes sure the format matches, the presence verifies the field is filled in and the uniqueness verifies there is only one like that in the database.</p>
-
-<h2>Password Security</h2>
-
-<p>Rails secures passwords very easily, you just have to add the following to the user model:</p>
-
-<pre><code>has_secure_password
-</code></pre>
-
-<p>By using the code above the users password is turned into a cryptographic hash and that hash is stored in the database.
-So even if someone gets a hold of the database all of the users passwords are still safe.</p>
-
-<p>That is all for today tomorrow Chapter 7.</p>
 ]]></content>
   </entry>
   
