@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Ruby on Rails Tutorial: Chapter 8 - Stephen Harnois</title>
+  <title>Category: Gaming - Stephen Harnois</title>
   <meta name="author" content="Stephen Harnois">
 
   
-  <meta name="description" content="Chapter 8 is about Signing the user in and out.
-The three sections in this chapter was setting up sessions, handling signin failure and handling &hellip;">
+  <meta name="description" content="Category: Gaming">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@ The three sections in this chapter was setting up sessions, handling signin fail
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://stephenharnois.github.io/stephenharnois/blog/2013/06/08/ruby-on-rails-tutorial-chapter-8">
+  <link rel="canonical" href="http://stephenharnois.github.io/stephenharnoisblog/categories/gaming">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Stephen Harnois" type="application/atom+xml">
@@ -70,134 +69,35 @@ The three sections in this chapter was setting up sessions, handling signin fail
   <div id="main">
     <div id="content">
       <div>
-<article class="hentry" role="article">
+<article role="article">
   
   <header>
-    
-      <h1 class="entry-title">Ruby on Rails Tutorial: Chapter 8</h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-08T15:48:00-04:00" pubdate data-updated="true">Jun 8<span>th</span>, 2013</time>
-        
-      </p>
+    <h1 class="entry-title">Category: Gaming</h1>
     
   </header>
+  
+  <div id="blog-archives" class="category">
 
 
-<div class="entry-content"><p>Chapter 8 is about Signing the user in and out.
-The three sections in this chapter was setting up sessions, handling signin failure and handling signin success.</p>
 
-<!-- more -->
+  
+  <h2>2013</h2>
+
+<article>
+  
+<h1><a href="/blog/2013/06/17/ouya-finally-here/">Ouya Finally In Production</a></h1>
+<time datetime="2013-06-17T13:23:00-04:00" pubdate><span class='month'>Jun</span> <span class='day'>17</span> <span class='year'>2013</span></time>
+
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/gaming/'>Gaming</a>, <a class='category' href='/blog/categories/kickstarter/'>Kickstarter</a></span>
+</footer>
 
 
-<h2>Sessions</h2>
+</article>
 
-<p>Sessions are a semi-permanent connection between server and client.
-Ruby uses cookies to store the session data.
-When a user signs in a new session has to be created.
-When a user signs out the existing session has to be created.
-Ruby does this using routes to point to the correct function.</p>
-
-<h2>Signin Failure</h2>
-
-<p>First a new signin page has to be created to setup the new session.
-Once the user signs in their password is compared to the hash stored in the database.
-I like the way that Ruby authenticates users.</p>
-
-<pre><code>user &amp;&amp; user.authenticate(params[:session][:password])
-</code></pre>
-
-<p>This solution is very elegant because if the user does not exist then user will be nil and it will stop comparing there.
-If the user exists and the password is wrong then signin will fail.
-The only way for the user login to succeed is if both user name and password match what is in the database.
-The flash that we setup last chapter is used here again to alert of a failed signin attempt.
-Once signin fails the user is redirected to signin again.</p>
-
-<h2>Signin Success</h2>
-
-<p>Once the user signs in correctly we send them to the profile page.
-To remember if a user has signed in we generate a random token and store that in there session.
-I like the way Rails handles expiring cookies, normally cookies expire at some time.
-If you want them to last a long time you would do the following:</p>
-
-<pre><code>cookies.20.years.from_now
-cookies.premanent
-</code></pre>
-
-<p>These two statements will have the same effect, since Rails has added a special permanent method.
-The current user is also stored in the session so that authorization can be handled.
-The last thing to handle is destroying the session once the user logs out, which is done with the delete method of the cookie.</p>
-
-<p>Thats it for this Chapter next is Chapter 9.</p>
 </div>
 
-
-  <footer>
-    <p class="meta">
-      
   
-
-<span class="byline author vcard">Posted by <span class="fn">Stephen Harnois</span></span>
-
-      
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-08T15:48:00-04:00" pubdate data-updated="true">Jun 8<span>th</span>, 2013</time>
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/training/'>Training</a>, <a class='category' href='/blog/categories/tutorial/'>Tutorial</a>
-  
-</span>
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://stephenharnois.github.io/stephenharnois/blog/2013/06/08/ruby-on-rails-tutorial-chapter-8/" data-via="StephenHarnois" data-counturl="http://stephenharnois.github.io/stephenharnois/blog/2013/06/08/ruby-on-rails-tutorial-chapter-8/" >Tweet</a>
-  
-  
-  <div class="g-plusone" data-size="medium"></div>
-  
-  
-    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
-  
-</div>
-
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2013/06/07/ruby-on-rails-tutorial-chapter-7/" title="Previous Post: Ruby on Rails Tutorial: Chapter 7">&laquo; Ruby on Rails Tutorial: Chapter 7</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2013/06/09/ruby-on-rails-tutorial-chapter-9/" title="Next Post: Ruby on Rails Tutorial: Chapter 9">Ruby on Rails Tutorial: Chapter 9 &raquo;</a>
-      
-    </p>
-  </footer>
 </article>
 
 </div>

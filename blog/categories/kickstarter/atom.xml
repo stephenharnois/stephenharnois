@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Kickstarter | Stephen Harnois]]></title>
+  <link href="http://stephenharnois.github.io/stephenharnois/blog/categories/kickstarter/atom.xml" rel="self"/>
+  <link href="http://stephenharnois.github.io/stephenharnois/"/>
+  <updated>2013-06-18T11:57:29-04:00</updated>
+  <id>http://stephenharnois.github.io/stephenharnois/</id>
+  <author>
+    <name><![CDATA[Stephen Harnois]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ouya Finally In Production]]></title>
+    <link href="http://stephenharnois.github.io/stephenharnois/blog/2013/06/17/ouya-finally-here/"/>
+    <updated>2013-06-17T13:23:00-04:00</updated>
+    <id>http://stephenharnois.github.io/stephenharnois/blog/2013/06/17/ouya-finally-here</id>
+    <content type="html"><![CDATA[<p>About a year ago I sponsored a <a href="http://www.kickstarter.com/">Kickstarter</a> project to bring an open source game console to market.
+The project was successfully funded and the Ouya was shipped a week ago.
+This weekend when the box arrived I took some time to take photos of the unboxing.
+I hope you enjoy!</p>
+
+<!-- more -->
+
+
+<h2><img src="/images/unbox1.png" alt="Sealed Box" /></h2>
+
+<h2><img src="/images/unbox2.png" alt="Sealed Box" /></h2>
+
+<h2><img src="/images/unbox3.png" alt="Sealed Box" /></h2>
+
+<h2><img src="/images/unbox4.png" alt="Sealed Box" /></h2>
+
+<h2><img src="/images/unbox5.png" alt="Sealed Box" /></h2>
+
+<h2><img src="/images/unbox6.png" alt="Sealed Box" /></h2>
+
+<p>I can&rsquo;t wait to make some games and play them on this new system.
+If you want more info on the system check out <a href="http://www.ouya.tv">Ouya.tv</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>
