@@ -4,7 +4,7 @@
   <title><![CDATA[Stephen Harnois]]></title>
   <link href="http://stephenharnois.github.io/stephenharnois/atom.xml" rel="self"/>
   <link href="http://stephenharnois.github.io/stephenharnois/"/>
-  <updated>2013-06-18T11:57:29-04:00</updated>
+  <updated>2013-06-20T18:25:41-04:00</updated>
   <id>http://stephenharnois.github.io/stephenharnois/</id>
   <author>
     <name><![CDATA[Stephen Harnois]]></name>
@@ -12,6 +12,22 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby Koans]]></title>
+    <link href="http://stephenharnois.github.io/stephenharnois/blog/2013/06/20/ruby-koans/"/>
+    <updated>2013-06-20T18:09:00-04:00</updated>
+    <id>http://stephenharnois.github.io/stephenharnois/blog/2013/06/20/ruby-koans</id>
+    <content type="html"><![CDATA[<p>The <a href="http://rubykoans.com/">Ruby Koans</a> tutorial is different from most tutorial because you use the language you are learning to run the tutorial.
+Most of the challenges were review from previous Ruby tutorials I have taken.
+There were several projects included in the Ruby Koans that were very difficult.
+The are a lot of good descriptions of the projects on Stack Overflow if you get stuck.
+Overall this was a very good tutorial and I learned a lot.</p>
+
+<p>Up next is more classes from <a href="http://www.codeschool.com/paths/ruby">Code School</a>.
+See you next time.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ouya Finally In Production]]></title>
