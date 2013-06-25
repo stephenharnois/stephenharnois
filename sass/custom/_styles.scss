@@ -14,3 +14,23 @@ hgroup img{
   margin-right: auto;
   display: block;
 }
+
+dt {
+  display: block;
+  color: $sidebar-color;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 30px;
+}
+  
+dd {
+    margin-bottom: 30px;
+    margin-left: 30px;
+    a {
+      text-decoration: none;
+    }
+    &:hover a{
+      color: $sidebar-link-color;
+      &:hover { color: $sidebar-link-color-hover; }
+    }
+}
