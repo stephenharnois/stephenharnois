@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Training | Stephen Harnois]]></title>
   <link href="http://stephenharnois.github.io/stephenharnois/blog/categories/training/atom.xml" rel="self"/>
   <link href="http://stephenharnois.github.io/stephenharnois/"/>
-  <updated>2013-06-22T09:56:40-04:00</updated>
+  <updated>2013-06-25T08:38:03-04:00</updated>
   <id>http://stephenharnois.github.io/stephenharnois/</id>
   <author>
     <name><![CDATA[Stephen Harnois]]></name>
@@ -12,6 +12,34 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Jumpstart Lab Tutorial]]></title>
+    <link href="http://stephenharnois.github.io/stephenharnois/blog/2013/06/24/jumpstart-lab-tutorials/"/>
+    <updated>2013-06-24T13:27:00-04:00</updated>
+    <id>http://stephenharnois.github.io/stephenharnois/blog/2013/06/24/jumpstart-lab-tutorials</id>
+    <content type="html"><![CDATA[<p>Today I found a very interesting and fun tutorial series on <a href="http://tutorials.jumpstartlab.com/">Jumpstart Lab</a>.
+These tutorials focus mainly on Ruby and Rails, but there is also some Javascript tutorials.
+I completed several of the tutorials so far and I think they are structured very well.
+The projects are designed more like a project would be given from a customer.
+Where you are just given an over all idea of what the client wants and you have to find a solution.
+The tutorial then walks you through the process of coming up with a solution.
+However they do not give you ever single step they point you towards a solution and allow you to discover the solution on your own.
+Then after a rough solution is found they refactor the solution to take advantage of the power of Ruby.
+This series is fun and I look forward to completing more of the sections.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Codecademy Web Fundamentals]]></title>
+    <link href="http://stephenharnois.github.io/stephenharnois/blog/2013/06/23/codecademy-web-fundamentals/"/>
+    <updated>2013-06-23T12:48:00-04:00</updated>
+    <id>http://stephenharnois.github.io/stephenharnois/blog/2013/06/23/codecademy-web-fundamentals</id>
+    <content type="html"><![CDATA[<p>Today I did some more fundamental HTML and CSS training. I found a good series on <a href="http://www.codecademy.com/tracks/web">Codecademy.com</a>
+The series covers the fundamentals of web design. This training was a good refresher and helped me learn some of the new HTML 5 methods for entering HTML.
+I found the projects fun and interesting and I look forward to the next set of tutorials about Javascript.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Twitter Bootstrap]]></title>
@@ -90,127 +118,6 @@ This tutorial had time when it was difficult, but if you stick with it and read 
 
 <p>That is it for this tutorial next I will be moving on to the <a href="http://rubykoans.com/">Ruby Koans</a> tutorial.
 Ruby Koans uses ruby itself to teach the language.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Ruby on Rails Tutorial: Chapter 10]]></title>
-    <link href="http://stephenharnois.github.io/stephenharnois/blog/2013/06/10/ruby-on-rails-tutorial-chapter-10/"/>
-    <updated>2013-06-10T15:57:00-04:00</updated>
-    <id>http://stephenharnois.github.io/stephenharnois/blog/2013/06/10/ruby-on-rails-tutorial-chapter-10</id>
-    <content type="html"><![CDATA[<p>This chapter was all about allowing the users ato enter their micro posts and to manipulate them.
-The section are setting up the micropost model, displaying the microposts and then allowing the microposts to be manipulated by the user.</p>
-
-<!-- more -->
-
-
-<h2>Micropost Model</h2>
-
-<p>The microposts model is simple it only contains the actual post from the user and the user id of the user.
-The main idea for this section is to setup a relationship between the user and his posts.
-Since one use can have many posts and a post can only belong to a single user.
-Rails allows you to set this relationship up very easily.</p>
-
-<pre><code>:Micropost Model
-belongs_to :user
-
-:User Model
-has_many :microposts
-</code></pre>
-
-<p>Those few lines is all it takes for Rails to establish the relationship.
-The last piece of setup for the micropost model is how to handle getting rid of users posts when the user is deleted from the system.
-Rails has the following solution:</p>
-
-<pre><code>:User Model
-has_many :microposts, dependent: :destroy
-</code></pre>
-
-<p>The dependent destroy option on the has many relationship will remove all associated posts when the user is deleted from the system.</p>
-
-<h2>Displaying Microposts</h2>
-
-<p>The microposts will be displayed on the users profile page, so a section is added there to display the microposts.
-To handle the pagination we will use the will_paginate ruby from the previous chapter with one small addition.</p>
-
-<pre><code>&lt;%= will_paginate @microposts %&gt;
-</code></pre>
-
-<p>Since we are on the user view coming from the user controller we have to tell will_paginate that we want the micropost data to be paginated.
-The last step to displaying microposts is a little bit of CSS styling and they are done.</p>
-
-<h2>Manipulating Microposts</h2>
-
-<p>Now we have to add the CRUD elements to microposts just like they were for users.
-Since now we now when a user is logged in we can check that on the home page and display a micropost form for users and a signup form for those who have not signed in yet.
-Since the user and micropost have the relationship defined above we can do something clever and define the new micropost based on the current user, like so:</p>
-
-<pre><code>@micropost = current_user.microposts.build if signed_in?
-</code></pre>
-
-<p>This one line will create a new micropost form for the user if they are signed in.
-To destroy a micropost you just have to call the destroy method on the micropost.</p>
-
-<p>Thats it for chapter 10 next is the final chapter 11 where users can follow other users.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Ruby on Rails Tutorial: Chapter 9]]></title>
-    <link href="http://stephenharnois.github.io/stephenharnois/blog/2013/06/09/ruby-on-rails-tutorial-chapter-9/"/>
-    <updated>2013-06-09T15:27:00-04:00</updated>
-    <id>http://stephenharnois.github.io/stephenharnois/blog/2013/06/09/ruby-on-rails-tutorial-chapter-9</id>
-    <content type="html"><![CDATA[<p>This Chapter is all about manipulating users and what they are allowed to do on the system.
-The topics covered in this Chapter were updating users, authorization, showing all users on the system and deleting users.</p>
-
-<!-- more -->
-
-
-<h2>Updating Users</h2>
-
-<p>Editing users is very similar to creating new users, we just have to call the update cation instead of the new action.
-We can use the find method to get the user id from the params structure and search the database for that user.
-If there is a problem with the edit send the use back and display error.
-On a successful edit just go to the users profile page.
-This section was very similar to the work from the previous chapter.</p>
-
-<h2>Authorization</h2>
-
-<p>The first step is to check if the user is signed in on every page and if not redirect them to the signin page.
-We will also display a notice to the user to sign in.
-I like how Rails uses the before filters in the controller to verify the correct user is signed in.</p>
-
-<pre><code>before_filter :signed_in_user, only: [:edit, :update]
-before_filter :correct_user,   only: [:edit, :update]
-</code></pre>
-
-<p>The next interesting piece was a way to remember what page the user was looking for and forward them to that page once signed in.</p>
-
-<h2>Showing All Users</h2>
-
-<p>The next step is to create a page to list all of the users, but we only want to show the users if a current user is signed in first.
-We then grab all of the users from the database and display them on the page.
-However this can cause a problem when the site grows ad has thousands of users.
-The solution is to use pagination, which is to only grab a page worth of users from the database.
-Then if you want to see more users you can request the next page of users.
-The tutorial uses <a href="https://github.com/mislav/will_paginate/wiki">will_paginate</a> gem to handle pagination.
-Since the user view will be getting its data from the users controller you can add pagination simply by adding the following:</p>
-
-<pre><code>:In the View
-&lt;%= will_paginate %&gt;
-
-:In the controller
-@users = User.paginate(page: params[:page])
-</code></pre>
-
-<h2>Deleting Users</h2>
-
-<p>The final piece of the puzzle is to allow admin users to remove users from the system.
-We have to add a field to the users database that defines an administrative user.
-Then we go to the list of all users and add a field to delete all users that are not the current user.
-The actual removal is simple, just by calling the destroy method on the user and then return an acknowledgement to the user.</p>
-
-<p>Thats it for Chapter 9 up next is Chapter 10.</p>
 ]]></content>
   </entry>
   

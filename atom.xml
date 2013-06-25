@@ -4,7 +4,7 @@
   <title><![CDATA[Stephen Harnois]]></title>
   <link href="http://stephenharnois.github.io/stephenharnois/atom.xml" rel="self"/>
   <link href="http://stephenharnois.github.io/stephenharnois/"/>
-  <updated>2013-06-22T09:56:40-04:00</updated>
+  <updated>2013-06-25T08:38:03-04:00</updated>
   <id>http://stephenharnois.github.io/stephenharnois/</id>
   <author>
     <name><![CDATA[Stephen Harnois]]></name>
@@ -12,6 +12,34 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Jumpstart Lab Tutorial]]></title>
+    <link href="http://stephenharnois.github.io/stephenharnois/blog/2013/06/24/jumpstart-lab-tutorials/"/>
+    <updated>2013-06-24T13:27:00-04:00</updated>
+    <id>http://stephenharnois.github.io/stephenharnois/blog/2013/06/24/jumpstart-lab-tutorials</id>
+    <content type="html"><![CDATA[<p>Today I found a very interesting and fun tutorial series on <a href="http://tutorials.jumpstartlab.com/">Jumpstart Lab</a>.
+These tutorials focus mainly on Ruby and Rails, but there is also some Javascript tutorials.
+I completed several of the tutorials so far and I think they are structured very well.
+The projects are designed more like a project would be given from a customer.
+Where you are just given an over all idea of what the client wants and you have to find a solution.
+The tutorial then walks you through the process of coming up with a solution.
+However they do not give you ever single step they point you towards a solution and allow you to discover the solution on your own.
+Then after a rough solution is found they refactor the solution to take advantage of the power of Ruby.
+This series is fun and I look forward to completing more of the sections.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Codecademy Web Fundamentals]]></title>
+    <link href="http://stephenharnois.github.io/stephenharnois/blog/2013/06/23/codecademy-web-fundamentals/"/>
+    <updated>2013-06-23T12:48:00-04:00</updated>
+    <id>http://stephenharnois.github.io/stephenharnois/blog/2013/06/23/codecademy-web-fundamentals</id>
+    <content type="html"><![CDATA[<p>Today I did some more fundamental HTML and CSS training. I found a good series on <a href="http://www.codecademy.com/tracks/web">Codecademy.com</a>
+The series covers the fundamentals of web design. This training was a good refresher and helped me learn some of the new HTML 5 methods for entering HTML.
+I found the projects fun and interesting and I look forward to the next set of tutorials about Javascript.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Twitter Bootstrap]]></title>
